@@ -21,3 +21,5 @@ if __name__ == "__main__":
         p.join()
 
     print("All chai served")
+
+#three different cors are working like 3 different waiters all bring orders at the same time
