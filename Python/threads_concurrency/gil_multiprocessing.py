@@ -8,7 +8,7 @@ def crunch_number():
         count += 1
     print(f"Ended the count process...")
 
-if __name__ == "__main__":
+if __name__ == "__main__": #without this line it can give runtime error as process doesnt have all info so basically it doesnt get to know entrypoint of the program
     start = time.time()
 
     p1 = Process(target=crunch_number)
