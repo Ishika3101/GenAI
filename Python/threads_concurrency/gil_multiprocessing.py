@@ -22,3 +22,37 @@ if __name__ == "__main__": #without this line it can give runtime error as proce
     end = time.time()
 
     print(f"Total time with multi-processing is {end - start:.2f} seconds")
+
+#why we write if name==maim
+# because It prevents child processes from re-running the entire script when they are created.
+# Without if __name__ == "__main__"
+# Main Process
+#       │
+#       ▼
+# Creates Child
+#       │
+#       ▼
+# Child executes whole file
+#       │
+#       ▼
+# Creates another Child
+#       │
+#       ▼
+# Creates another Child
+#       │
+#       ▼
+# Infinite process creation ❌
+# With if __name__ == "__main__"
+# Main Process
+#       │
+#       ▼
+# Creates Child
+#       │
+#       ▼
+# Child imports file
+#       │
+#       ▼
+# Skips the if block
+#       │
+#       ▼
+# Runs only task() ✅
