@@ -10,7 +10,7 @@ async def main():
     async with aiohttp.ClientSession() as session:
         tasks = [fetch_url(session, url) for url in urls]
         # tasks = [t1, t2, t3]
-        await asyncio.gather(*tasks) #we will gather reference of tasks
+        await asyncio.gather(*tasks) #we will gather reference of tasks, here we used asterisk because this is the way of unpacking basically instead of writing asyncio.gather(t1,t2,t3)
         
 
 asyncio.run(main())
